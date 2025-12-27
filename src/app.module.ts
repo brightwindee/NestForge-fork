@@ -9,7 +9,6 @@ import { HeaderResolver } from 'nestjs-i18n';
 import { I18nModule } from 'nestjs-i18n/dist/i18n.module';
 import { DataSource, DataSourceOptions } from 'typeorm';
 
-import { BiometricChallengeModule } from '@src/biometric-challenges/biometric-challenges.module';
 import { CacheModule } from '@src/cache/cache.module';
 import redisConfig from '@src/cache/config/redis.config';
 import awsConfig from '@src/config/aws.config';
@@ -19,14 +18,6 @@ import { CorrelationIdMiddleware } from '@src/loggings/utils/correlation-id.midd
 import { AccessManagementModule } from './access-management/access-management.module';
 import { AuthModule } from './auth/auth.module';
 import authConfig from './auth/config/auth.config';
-import { AuthAppleModule } from './auth-apple/auth-apple.module';
-import appleConfig from './auth-apple/config/apple.config';
-import { AuthFacebookModule } from './auth-facebook/auth-facebook.module';
-import facebookConfig from './auth-facebook/config/facebook.config';
-import { AuthGoogleModule } from './auth-google/auth-google.module';
-import googleConfig from './auth-google/config/google.config';
-import { AuthTwitterModule } from './auth-twitter/auth-twitter.module';
-import twitterConfig from './auth-twitter/config/twitter.config';
 import appConfig from './config/app.config';
 import { AllConfigType } from './config/config.type';
 import databaseConfig from './database/config/database.config';
@@ -69,10 +60,6 @@ const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
         appConfig,
         mailConfig,
         fileConfig,
-        facebookConfig,
-        googleConfig,
-        twitterConfig,
-        appleConfig,
         genAiConfig,
         redisConfig,
       ],
@@ -105,11 +92,6 @@ const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
     UsersModule,
     FilesModule,
     AuthModule,
-    AuthFacebookModule,
-    AuthGoogleModule,
-    AuthTwitterModule,
-    AuthAppleModule,
-    BiometricChallengeModule,
     SessionModule,
     MailModule,
     MailerModule,
