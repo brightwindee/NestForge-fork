@@ -16,8 +16,6 @@ import { UserDevice } from '@src/users/domain/user-device';
 import { DeepPartial } from '@src/utils/types/deep-partial.type';
 import { NullableType } from '@src/utils/types/nullable.type';
 import { IPaginationOptions } from '@src/utils/types/pagination-options';
-import { UserSummary } from '@src/views/domain/user-summary';
-import { ViewsService } from '@src/views/views.service';
 
 import { User } from './domain/user';
 import { CreateUserDto } from './dto/create-user.dto';
