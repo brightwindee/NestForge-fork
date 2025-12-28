@@ -51,12 +51,6 @@ export class UsersController {
   @ApiOkResponse({
     type: User,
   })
-  @Get('summary')
-  @HttpCode(HttpStatus.OK)
-  getUsersSummary(): Promise<NullableType<UserSummary[]>> {
-    return this.usersService.getUsersSummary();
-  }
-
   @UseGuards(AuthGuard('jwt'), PoliciesGuard)
   @CheckAbility({ action: PermissionActionEnum.READ, subject: 'User' })
   @ApiOkResponse({

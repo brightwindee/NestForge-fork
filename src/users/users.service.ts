@@ -222,13 +222,4 @@ export class UsersService {
     }
     return user;
   }
-
-  getUsersSummary(): Promise<UserSummary[]> {
-    return this.viewsService.getUsersSummary();
-  }
-
-  getUserSummary(id: User['id']): Promise<NullableType<UserSummary>> {
-    const userSummaryView = this.viewsService.getUsersSummaryView();
-    return this.userRepository.getUserSummary(id, userSummaryView);
-  }
 }
