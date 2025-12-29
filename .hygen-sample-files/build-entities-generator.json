@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Build",
+    "parent": null,
+    "isAddTestCase": true,
+    "functionalities": ["create", "findAll", "findOne", "update", "delete"],
+    "fields": [
+      {
+        "name": "build_id",
+        "type": "bigint",
+        "isNullable": false,
+        "isUnique": true
+      },
+      {
+        "name": "requester",
+        "type": "text",
+        "isNullable": false
+      },
+      {
+        "name": "conf_path",
+        "type": "text",
+        "isNullable": false
+      },
+      {
+        "name": "status",
+        "type": "text",
+        "isNullable": false,
+        "associatedEnumName": "BuildStatus"
+      },
+      {
+        "name": "started_at",
+        "type": "timestamptz",
+        "isNullable": false
+      }
+    ],
+    "relations": [],
+    "enums": [
+      {
+        "name": "BuildStatus",
+        "values": ["Successful", "Failed", "Running", "Canceled"]
+      }
+    ]
+  }
+]
